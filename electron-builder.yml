@@ -15,7 +15,7 @@ files:
 
 publish:
   - provider: github
-    owner: wanchain
+    owner: JasonHJ
     repo: wan-wallet-desktop
 
 mac:

@@ -10,7 +10,7 @@ import { Octokit } from '@octokit/rest';
 import { version } from '~/package.json';
 import compareVersions from 'compare-versions';
 const resolve = dir => path.join(__dirname, '../../../', dir);
-const octokit = new Octokit();
+const octokit = new Octokit({ auth: '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' });
 const assetName = 'upgrade.json';
 
 class WalletUpdater {
@@ -34,7 +34,7 @@ class WalletUpdater {
     this.updater.getUpgradeType = async () => {
       try {
         let release = await octokit.repos.getLatestRelease({
-          owner: 'wanchain',
+          owner: 'JasonHJ',
           repo: 'wan-wallet-desktop',
         });
         let assetInfo = release.data.assets.find(obj => obj.name === assetName);
@@ -188,8 +188,9 @@ class WalletUpdater {
       if (process.platform !== 'darwin') updateModal.webContents.send('updateInfo', 'upgradeProgress', 'done');
       const self = this;
       setTimeout(() => {
+        app.removeAllListeners("window-all-closed")
         self.updater.quitAndInstall();
-      }, 3 * 1000);
+      }, 10000);
     });
     this.updater.checkForUpdates()
       .catch(err => {

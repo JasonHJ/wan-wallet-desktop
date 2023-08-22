@@ -10,22 +10,22 @@
     <true/>
     <key>com.apple.security.cs.disable-library-validation</key>
     <true/>
-  </dict>
-  <key>NSAppTransportSecurity</key>
-  <dict>
-    <key>NSExceptionDomains</key>
+    <key>NSAppTransportSecurity</key>
     <dict>
-        <key>localhost</key>
-        <dict>
-            <key>NSIncludesSubdomains</key>
-            <true/>
-            <key>NSExceptionAllowsInsecureHTTPLoads</key>
-            <true/>
-        </dict>
+      <key>NSExceptionDomains</key>
+      <dict>
+          <key>localhost</key>
+          <dict>
+              <key>NSIncludesSubdomains</key>
+              <true/>
+              <key>NSExceptionAllowsInsecureHTTPLoads</key>
+              <true/>
+          </dict>
+      </dict>
+      <key>NSAllowsArbitraryLoadsInWebContent</key>
+      <true/>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
     </dict>
-    <key>NSAllowsArbitraryLoadsInWebContent</key>
-    <true/>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
   </dict>
 </plist>

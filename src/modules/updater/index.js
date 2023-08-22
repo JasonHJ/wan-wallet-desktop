@@ -187,10 +187,22 @@ class WalletUpdater {
       this._logger.info('======= update-downloaded =======:');
       if (process.platform !== 'darwin') updateModal.webContents.send('updateInfo', 'upgradeProgress', 'done');
       const self = this;
-      setTimeout(() => {
-        app.removeAllListeners("window-all-closed")
-        self.updater.quitAndInstall();
-      }, 10000);
+      // setTimeout(() => {
+      //   app.removeAllListeners("window-all-closed")
+      //   self.updater.quitAndInstall();
+      //   app.exit();
+      // }, 3000);
+      dialog.showMessageBox({
+        type: 'question',
+        buttons: ['Install and Restart', 'Later'],
+        defaultId: 0,
+        message: 'A new update has been downloaded. Would you like to install and restart the app now?'
+    }).then(selection => {
+        if (selection.response === 0) {
+            // User clicked 'Install and Restart'
+            self.updater.quitAndInstall();
+        }
+    });
     });
     this.updater.checkForUpdates()
       .catch(err => {

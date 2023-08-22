@@ -1,7 +1,7 @@
 {
   "name": "wanwallet",
   "productName": "Wan Wallet",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "description": "Wanchain's new multicoin wallet",
   "main": "./build/main.js",
   "author": {
@@ -143,5 +143,10 @@
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
-  }
+  },
+  "extendInfo": {
+    "NSAppTransportSecurity": {
+       "NSAllowsArbitraryLoads": true
+     }
+   }
 }

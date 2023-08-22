@@ -1,7 +1,7 @@
 {
   "name": "wanwallet",
   "productName": "Wan Wallet",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "Wanchain's new multicoin wallet",
   "main": "./build/main.js",
   "author": {
@@ -147,6 +147,12 @@
   "extendInfo": {
     "NSAppTransportSecurity": {
        "NSAllowsArbitraryLoads": true
+     },
+     "NSExceptionDomains": {
+       "download.mydomain.com": {
+         "NSTemporaryExceptionAllowsInsecureHTTPLoads": true,
+         "NSTemporaryExceptionRequiresForwardSecrecy": false
+       }
      }
    }
 }

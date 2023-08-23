@@ -1,7 +1,7 @@
 {
   "name": "wanwallet",
   "productName": "Wan Wallet",
-  "version": "1.6.17",
+  "version": "1.6.18",
   "description": "Wanchain's new multicoin wallet",
   "main": "./build/main.js",
   "author": {
